@@ -1,9 +1,8 @@
 :root {
-  --light-grey: #ddd;
-  --dark-grey: #aaa;
-  --header-bg: rgb(18, 0, 100);
+  --header-bg: 9, 7, 140;
   --table-radius: 8px;
-  --bg-grey: rgba(0, 0, 0, 0.05);
+  --tbody-odd-bg: rgba(0, 0, 0, 0.05);
+  --header-index: 0;
 }
 table {
   min-width: 600px;
@@ -24,8 +23,27 @@ thead > tr > th:first-child {
 thead > tr > th:last-child {
   border-top-right-radius: var(--table-radius);
 }
-thead > tr > th:nth-child(n) {
-  background-color: rgba(0, n, 0, 0.05);
+thead > tr > th:nth-child(1) {
+  --header-index:1;
+}
+thead > tr > th:nth-child(2) {
+  --header-index:2;
+}
+thead > tr > th:nth-child(3) {
+  --header-index:3;
+}
+thead > tr > th:nth-child(4) {
+  --header-index:4;
+}
+thead > tr > th:nth-child(5) {
+  --header-index:5;
+}
+thead > tr > th{
+  background-color: rgba(var(--header-bg), calc(0.20*var(--header-index)));
+  color: white;
+}
+thead > tr > th:first-child{
+  /* background-color: rgba(var(--header-bg),35%); */
 }
 thead th p:nth-child(2) {
   margin-top: 30px;
@@ -34,11 +52,11 @@ thead th p:nth-child(2) {
 }
 tbody > tr > td:nth-child(odd),
 tfoot > tr > th:nth-child(odd) {
-  background-color: var(--bg-grey);
+  background-color: var(--tbody-odd-bg);
 }
 tbody > tr:nth-child(odd),
 tfoot > tr:nth-child(odd) {
-  background-color: var(--bg-grey);
+  background-color: var(--tbody-odd-bg);
 }
 tbody > tr > td {
   text-align: center;
