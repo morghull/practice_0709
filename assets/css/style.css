@@ -39,11 +39,9 @@ thead > tr > th:nth-child(5) {
   --header-index:5;
 }
 thead > tr > th{
-  background-color: rgba(var(--header-bg), calc(0.20*var(--header-index)));
+  background-color: rgba(var(--header-bg), calc(.20*var(--header-index)));
+  /* background-color: rgba(var(--header-bg), calc(.25+.15*var(--header-index))); */ /*won't work*/
   color: white;
-}
-thead > tr > th:first-child{
-  /* background-color: rgba(var(--header-bg),35%); */
 }
 thead th p:nth-child(2) {
   margin-top: 30px;
